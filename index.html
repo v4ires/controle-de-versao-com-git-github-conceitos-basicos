@@ -23,19 +23,21 @@
 
   <link rel="icon" href="img/logos/favicon.ico">
 
-  <style media="screen">
-    .span {
-      font-size: x-large;
-    }
-  </style>
-
-  <!-- Printing and PDF exports -->
   <script>
-    var link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-    document.getElementsByTagName('head')[0].appendChild(link);
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-69805490-1', 'auto');
+    ga('send', 'pageview');
   </script>
 
   <!--[if lt IE 9]>
@@ -63,7 +65,7 @@
       <section>
         <h2>Licença</h2>
         <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-        <img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+          <img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
         <br/>
         <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">
         Esta apresentação está licenciada com uma Licença
@@ -107,8 +109,7 @@
           <h3>Mas afinal de contas o que é o Git?</h3>
           <img src="img/logos/Git-logo.png" alt="git-logo" />
           <p>
-            Git é um sistema de controle de versão distribuído e um sistema de gerenciamento de código fonte com ênfase em velocidade,
-            integridade de dados e suporte para workflows não lineares distribuídos.
+            Git é um sistema de controle de versão distribuído e um sistema de gerenciamento de código fonte com ênfase em velocidade, integridade de dados e suporte para workflows não lineares distribuídos.
           </p>
         </section>
 
@@ -116,16 +117,17 @@
           <h3>Mas afinal de contas o que é o Git?</h3>
           <img src="img/slide-assets/git-server.png" alt="" />
           <p>
-            Igualmente a vários outros sistemas de controle de versão distribuída, e diferente da maioria dos sistemas cliente-servidor, qualquer diretório Git
-            é um repositório totalmente desenvolvido com um completo histórico de controle de versão independente de acesso à internet ou de um servidor central
+            Igualmente a vários outros sistemas de controle de versão distribuída, e diferente da maioria dos sistemas cliente-servidor, qualquer diretório Git é um repositório totalmente desenvolvido com um completo histórico de controle de versão independente de
+            acesso à internet ou de um servidor central
           </p>
         </section>
 
         <section>
           <h3>Mas afinal de contas o que é o Git?</h3>
           <img src="img/slide-assets/git-joke.png" alt="" />
-          <p>            
-            O Git é muito utilizado em diversas empresas de desenvolvimento e funciona muito bem na maioria dos projetos, independentemente do tamanho do projeto ou do seu tipo. Ou seja praticamente todos os projetos que você irá desenvolver você poderá usar o Git como ferramenta de controle de versão.
+          <p>
+            O Git é muito utilizado em diversas empresas de desenvolvimento e funciona muito bem na maioria dos projetos, independentemente do tamanho do projeto ou do seu tipo. Ou seja praticamente todos os projetos que você irá desenvolver você poderá usar o Git
+            como ferramenta de controle de versão.
           </p>
         </section>
       </section>
@@ -220,7 +222,7 @@
           <h3>Uma Breve História sobre o GitHub</h3>
           <img src="img/fun/teacher_octocat.png" alt="" />
           <p>
-             O desenvolvimento da plataforma Github começou em 1° de outubro de 2007. O site foi lançado em abril de 2008 por Tom Preston-Werner, Chris Wanstrath, and PJ Hyett depois de ter ficado por alguns meses no ar em fase beta.
+            O desenvolvimento da plataforma Github começou em 1° de outubro de 2007. O site foi lançado em abril de 2008 por Tom Preston-Werner, Chris Wanstrath, and PJ Hyett depois de ter ficado por alguns meses no ar em fase beta.
           </p>
         </section>
         <section>
@@ -253,7 +255,7 @@
       <section data-transition="slide" data-background="#006064">
         <section>
           <h3>Mas por que usar o Git e GitHub?</h3>
-          <img src="img/fun/daftpunk_octocat.gif" alt="" style="width: 30%;"/>
+          <img src="img/fun/daftpunk_octocat.gif" alt="" style="width: 30%;" />
           <br>
           <ul>
             <li>Utilizar em projetos individuais ou em grupo</li>
@@ -338,7 +340,7 @@
 
       <section data-background="#f14e32">
         <h3>Documentação/Livros</h3>
-        <a href="https://git-scm.com/book/pt-br/v1" target="_blank"><img src="https://git-scm.com/images/books/pro-git@2x.jpg" alt="" style="margin-right: 25px;"/></a>
+        <a href="https://git-scm.com/book/pt-br/v1" target="_blank"><img src="https://git-scm.com/images/books/pro-git@2x.jpg" alt="" style="margin-right: 25px;" /></a>
         <a href="https://git-scm.com/documentation" target="_blank"><img src="https://github-images.s3.amazonaws.com/enterprise/2.0/assets/images/site/fork-a-repo.gif" alt="" /></a>
       </section>
 
@@ -374,9 +376,10 @@
           <br>
           <h4>Possíveis comandos</h4>
           <div style="border: solid 1px;background-color: white;">
-            git init [-q | --quiet] [--bare] [--template=<template_directory>]
-            	  [--separate-git-dir <git dir>]
-            	  [--shared[=<permissions>]] [directory]
+            git init [-q | --quiet] [--bare] [--template=
+            <template_directory>] [--separate-git-dir
+              <git dir>] [--shared[=
+                <permissions>]] [directory]
           </div>
           <br>
           <caption><a href="https://git-scm.com/docs/git-init" target="_blank">referência na documentação do git</a></caption>
@@ -388,7 +391,9 @@
           <br>
           <h4>Possíveis comandos</h4>
           <div style="border: solid 1px;background-color: white;">
-            git status [<options>…​] [--] [<pathspec>…​]
+            git status [
+            <options>…​] [--] [
+              <pathspec>…​]
           </div>
           <br>
           <caption><a href="https://git-scm.com/docs/git-status" target="_blank">referência na documentação do git</a></caption>
@@ -400,10 +405,8 @@
           <br>
           <h4>Possíveis comandos</h4>
           <div style="border: solid 1px;background-color: white;">
-            git add [--verbose | -v] [--dry-run | -n] [--force | -f] [--interactive | -i] [--patch | -p]
-	                  [--edit | -e] [--[no-]all | --[no-]ignore-removal | [--update | -u]]
-	                  [--intent-to-add | -N] [--refresh] [--ignore-errors] [--ignore-missing]
-	                  [--] [<pathspec>…​]
+            git add [--verbose | -v] [--dry-run | -n] [--force | -f] [--interactive | -i] [--patch | -p] [--edit | -e] [--[no-]all | --[no-]ignore-removal | [--update | -u]] [--intent-to-add | -N] [--refresh] [--ignore-errors] [--ignore-missing] [--] [
+            <pathspec>…​]
           </div>
           <br>
           <caption><a href="https://git-scm.com/docs/git-add" target="_blank">referência na documentação do git</a></caption>
@@ -415,7 +418,8 @@
           <br>
           <h4>Possíveis comandos</h4>
           <div style="border: solid 1px;background-color: white;">
-            git rm [-f | --force] [-n] [-r] [--cached] [--ignore-unmatch] [--quiet] [--] <file>…​
+            git rm [-f | --force] [-n] [-r] [--cached] [--ignore-unmatch] [--quiet] [--]
+            <file>…​
           </div>
           <br>
           <caption><a href="https://git-scm.com/docs/git-rm" target="_blank">referência na documentação do git</a></caption>
@@ -427,12 +431,16 @@
           <br>
           <h4>Possíveis comandos</h4>
           <div style="border: solid 1px;background-color: white;">
-            git commit [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]
-                  	   [--dry-run] [(-c | -C | --fixup | --squash) <commit>]
-                  	   [-F <file> | -m <msg>] [--reset-author] [--allow-empty]
-                  	   [--allow-empty-message] [--no-verify] [-e] [--author=<author>]
-                  	   [--date=<date>] [--cleanup=<mode>] [--[no-]status]
-                  	   [-i | -o] [-S[<keyid>]] [--] [<file>…​]
+            git commit [-a | --interactive | --patch] [-s] [-v] [-u
+            <mode>] [--amend] [--dry-run] [(-c | -C | --fixup | --squash)
+              <commit>] [-F
+                <file> | -m
+                  <msg>] [--reset-author] [--allow-empty] [--allow-empty-message] [--no-verify] [-e] [--author=
+                    <author>] [--date=
+                      <date>] [--cleanup=
+                        <mode>] [--[no-]status] [-i | -o] [-S[
+                          <keyid>]] [--] [
+                            <file>…​]
           </div>
           <br>
           <caption><a href="https://git-scm.com/docs/git-commit" target="_blank">referência na documentação do git</a></caption>
@@ -444,13 +452,17 @@
           <br>
           <h4>Possíveis comandos</h4>
           <div style="border: solid 1px;background-color: white;">
-            git clone [--template=<template_directory>]
-                  	  [-l] [-s] [--no-hardlinks] [-q] [-n] [--bare] [--mirror]
-                  	  [-o <name>] [-b <name>] [-u <upload-pack>] [--reference <repository>]
-                  	  [--dissociate] [--separate-git-dir <git dir>]
-                  	  [--depth <depth>] [--[no-]single-branch]
-                  	  [--recursive | --recurse-submodules] [--] <repository>
-                  	  [<directory>]
+            git clone [--template=
+            <template_directory>] [-l] [-s] [--no-hardlinks] [-q] [-n] [--bare] [--mirror] [-o
+              <name>] [-b
+                <name>] [-u
+                  <upload-pack>] [--reference
+                    <repository>] [--dissociate] [--separate-git-dir
+                      <git dir>] [--depth
+                        <depth>] [--[no-]single-branch] [--recursive | --recurse-submodules] [--]
+                          <repository>
+                            [
+                            <directory>]
           </div>
           <br>
           <caption><a href="https://git-scm.com/docs/git-clone" target="_blank">referência na documentação do git</a></caption>
@@ -462,12 +474,13 @@
           <br>
           <h4>Possíveis comandos</h4>
           <div style="border: solid 1px;background-color: white;">
-            git push [--all | --mirror | --tags] [--follow-tags] [--atomic] [-n | --dry-run] [--receive-pack=<git-receive-pack>]
-                	   [--repo=<repository>] [-f | --force] [--prune] [-v | --verbose]
-                	   [-u | --set-upstream]
-                	   [--[no-]signed|--sign=(true|false|if-asked)]
-                	   [--force-with-lease[=<refname>[:<expect>]]]
-                	   [--no-verify] [<repository> [<refspec>…​]]
+            git push [--all | --mirror | --tags] [--follow-tags] [--atomic] [-n | --dry-run] [--receive-pack=
+            <git-receive-pack>] [--repo=
+              <repository>] [-f | --force] [--prune] [-v | --verbose] [-u | --set-upstream] [--[no-]signed|--sign=(true|false|if-asked)] [--force-with-lease[=
+                <refname>[:
+                  <expect>]]] [--no-verify] [
+                    <repository> [
+                      <refspec>…​]]
           </div>
           <br>
           <caption><a href="https://git-scm.com/docs/git-push" target="_blank">referência na documentação do git</a></caption>
@@ -479,7 +492,9 @@
           <br>
           <h4>Possíveis comandos</h4>
           <div style="border: solid 1px;background-color: white;">
-            git pull [options] [<repository> [<refspec>…​]]
+            git pull [options] [
+            <repository> [
+              <refspec>…​]]
           </div>
           <br>
           <caption><a href="https://git-scm.com/docs/git-pull" target="_blank">referência na documentação do git</a></caption>
@@ -491,7 +506,10 @@
           <br>
           <h4>Possíveis comandos</h4>
           <div style="border: solid 1px;background-color: white;">
-            git log [<options>] [<revision range>] [[\--] <path>…​]
+            git log [
+            <options>] [
+              <revision range>] [[\--]
+                <path>…​]
           </div>
           <br>
           <caption><a href="https://git-scm.com/docs/git-log" target="_blank">referência na documentação do git</a></caption>
@@ -528,17 +546,23 @@
           <br>
           <h4>Possíveis comandos</h4>
           <div style="border: solid 1px;background-color: white;">
-            git branch  [--color[=<'when'>] | --no-color] [-r | -a]
-                        [--list] [-v [--abbrev=<'length'> | --no-abbrev]]
-                        [--column[=<'options'>] | --no-column]
-                        [(--merged | --no-merged | --contains) [<'commit'>]] [<'pattern'>…​]
-
-            git branch [--set-upstream | --track | --no-track] [-l] [-f] <'branchname'> [<'start-point'>]
-            git branch (--set-upstream-to=<'upstream'> | -u <'upstream'>) [<'branchname'>]
-            git branch --unset-upstream [<'branchname'>]
-            git branch (-m | -M) [<'oldbranch'>] <'newbranch'>
-            git branch (-d | -D) [-r] <'branchname'>…​
-            git branch --edit-description [<'branchname'>]
+            git branch [--color[=
+            < 'when'>] | --no-color] [-r | -a] [--list] [-v [--abbrev=
+              < 'length'> | --no-abbrev]] [--column[=
+                < 'options'>] | --no-column] [(--merged | --no-merged | --contains) [
+                  < 'commit'>]] [
+                    < 'pattern'>…​] git branch [--set-upstream | --track | --no-track] [-l] [-f]
+                      < 'branchname'> [
+                        < 'start-point'>] git branch (--set-upstream-to=
+                          < 'upstream'> | -u
+                            < 'upstream'>) [
+                              < 'branchname'>] git branch --unset-upstream [
+                                < 'branchname'>] git branch (-m | -M) [
+                                  < 'oldbranch'>]
+                                    < 'newbranch'>
+                                      git branch (-d | -D) [-r]
+                                      < 'branchname'>…​ git branch --edit-description [
+                                        < 'branchname'>]
           </div>
           <br>
           <caption><a href="https://git-scm.com/docs/git-branch" target="_blank">referência na documentação do git</a></caption>
@@ -550,12 +574,18 @@
           <br>
           <h4>Possíveis comandos</h4>
           <div style="border: solid 1px;background-color: white;">
-            git checkout [-q] [-f] [-m] [<'branch'>]
-            git checkout [-q] [-f] [-m] --detach [<'branch'>]
-            git checkout [-q] [-f] [-m] [--detach] <'commit'>
-            git checkout [-q] [-f] [-m] [[-b|-B|--orphan] <'new_branch'>] [<'start_point'>]
-            git checkout [-f|--ours|--theirs|-m|--conflict=<'style'>] [<'tree-ish'>] [--] <'paths'>…​
-            git checkout [-p|--patch] [<'tree-ish'>] [--] [<'paths'>…​]
+            git checkout [-q] [-f] [-m] [
+            < 'branch'>] git checkout [-q] [-f] [-m] --detach [
+              < 'branch'>] git checkout [-q] [-f] [-m] [--detach]
+                < 'commit'>
+                  git checkout [-q] [-f] [-m] [[-b|-B|--orphan]
+                  < 'new_branch'>] [
+                    < 'start_point'>] git checkout [-f|--ours|--theirs|-m|--conflict=
+                      < 'style'>] [
+                        < 'tree-ish'>] [--]
+                          < 'paths'>…​ git checkout [-p|--patch] [
+                            < 'tree-ish'>] [--] [
+                              < 'paths'>…​]
           </div>
           <br>
           <caption><a href="https://git-scm.com/docs/git-checkout" target="_blank">referência na documentação do git</a></caption>
@@ -567,11 +597,14 @@
           <br>
           <h4>Possíveis comandos</h4>
           <div style="border: solid 1px;background-color: white;">
-            git merge [-n] [--stat] [--no-commit] [--squash] [--[no-]edit]
-                      [-s <'strategy'>] [-X <'strategy-option'>] [-S[<'keyid'>]]
-                      [--[no-]rerere-autoupdate] [-m <'msg'>] [<'commit'>…​]
-            git merge <'msg'> HEAD <'commit'>…​
-            git merge --abort
+            git merge [-n] [--stat] [--no-commit] [--squash] [--[no-]edit] [-s
+            < 'strategy'>] [-X
+              < 'strategy-option'>] [-S[
+                < 'keyid'>]] [--[no-]rerere-autoupdate] [-m
+                  < 'msg'>] [
+                    < 'commit'>…​] git merge
+                      < 'msg'> HEAD
+                        < 'commit'>…​ git merge --abort
           </div>
           <br>
           <caption><a href="https://git-scm.com/docs/git-merge" target="_blank">referência na documentação do git</a></caption>
@@ -583,11 +616,19 @@
           <br>
           <h4>Possíveis comandos</h4>
           <div style="border: solid 1px;background-color: white;">
-            git diff [options] [<'commit'>] [--] [<'path'>…​]
-            git diff [options] --cached [<'commit'>] [--] [<'path'>…​]
-            git diff [options] <'commit'> <'commit'> [--] [<'path'>…​]
-            git diff [options] <'blob'> <'blob'>
-            git diff [options] [--no-index] [--] <'path'> <'path'>
+            git diff [options] [
+            < 'commit'>] [--] [
+              < 'path'>…​] git diff [options] --cached [
+                < 'commit'>] [--] [
+                  < 'path'>…​] git diff [options]
+                    < 'commit'>
+                      < 'commit'> [--] [
+                        < 'path'>…​] git diff [options]
+                          < 'blob'>
+                            < 'blob'>
+                              git diff [options] [--no-index] [--]
+                              < 'path'>
+                                < 'path'>
           </div>
           <br>
           <caption><a href="https://git-scm.com/docs/git-diff" target="_blank">referência na documentação do git</a></caption>
@@ -599,10 +640,17 @@
           <br>
           <h4>Possíveis comandos</h4>
           <div style="border: solid 1px;background-color: white;">
-            git remote [-v | --verbose]
-            git remote add [-t <'branch'>] [-m <'master'>] [-f] [--[no-]tags] [--mirror=<'fetch'|'push'>] <'name'> <'url'>
-            git remote rename <'old'> <'new'>
-            git remote remove <'name'>
+            git remote [-v | --verbose] git remote add [-t
+            < 'branch'>] [-m
+              < 'master'>] [-f] [--[no-]tags] [--mirror=
+                < 'fetch'| 'push'>]
+                  < 'name'>
+                    < 'url'>
+                      git remote rename
+                      < 'old'>
+                        < 'new'>
+                          git remote remove
+                          < 'name'>
           </div>
           <br>
           <caption><a href="https://git-scm.com/docs/git-remote" target="_blank">referência na documentação do git</a></caption>
@@ -614,9 +662,14 @@
           <br>
           <h4>Possíveis comandos</h4>
           <div style="border: solid 1px;background-color: white;">
-            git rebase [-i | --interactive] [options] [--exec <'cmd'>] [--onto <'newbase'>] [<'upstream'> [<'branch'>]]
-            git rebase [-i | --interactive] [options] [--exec <'cmd'>] [--onto <'newbase'>] --root [<'branch'>]
-            git rebase --continue | --skip | --abort | --edit-todo
+            git rebase [-i | --interactive] [options] [--exec
+            < 'cmd'>] [--onto
+              < 'newbase'>] [
+                < 'upstream'> [
+                  < 'branch'>]] git rebase [-i | --interactive] [options] [--exec
+                    < 'cmd'>] [--onto
+                      < 'newbase'>] --root [
+                        < 'branch'>] git rebase --continue | --skip | --abort | --edit-todo
           </div>
           <br>
           <caption><a href="https://git-scm.com/docs/git-rebase" target="_blank">referência na documentação do git</a></caption>
@@ -628,9 +681,12 @@
           <br>
           <h4>Possíveis comandos</h4>
           <div style="border: solid 1px;background-color: white;">
-            git reset [-q] [<'tree-ish'>] [--] <'paths'>...
-            git reset (--patch | -p) [<'tree-ish'>] [--] [<'paths'>...]
-            git reset [--soft | --mixed [-N] | --hard | --merge | --keep] [-q] [<'commit'>]
+            git reset [-q] [
+            < 'tree-ish'>] [--]
+              < 'paths'>... git reset (--patch | -p) [
+                < 'tree-ish'>] [--] [
+                  < 'paths'>...] git reset [--soft | --mixed [-N] | --hard | --merge | --keep] [-q] [
+                    < 'commit'>]
           </div>
           <br>
           <caption><a href="https://git-scm.com/docs/git-reset" target="_blank">referência na documentação do git</a></caption>
@@ -642,12 +698,20 @@
           <br>
           <h4>Possíveis comandos</h4>
           <div style="border: solid 1px;background-color: white;">
-            git tag [-a | -s | -u <'keyid'>] [-f] [-m <'msg'> | -F <'file'>]
-                    <'tagname'> [<'commit'> | <'object'>]
-            git tag -d <'tagname'>…​
-            git tag [-n[<'num'>]] -l [--contains <'commit'>] [--points-at <'object'>]
-                    [--column[=<'options'>] | --no-column] [--create-reflog] [<'pattern'>…​]
-            git tag -v <'tagname'>…​
+            git tag [-a | -s | -u
+            < 'keyid'>] [-f] [-m
+              < 'msg'> | -F
+                < 'file'>]
+                  < 'tagname'> [
+                    < 'commit'> |
+                      < 'object'>] git tag -d
+                        < 'tagname'>…​ git tag [-n[
+                          < 'num'>]] -l [--contains
+                            < 'commit'>] [--points-at
+                              < 'object'>] [--column[=
+                                < 'options'>] | --no-column] [--create-reflog] [
+                                  < 'pattern'>…​] git tag -v
+                                    < 'tagname'>…​
           </div>
           <br>
           <caption><a href="https://git-scm.com/docs/git-tag" target="_blank">referência na documentação do git</a></caption>
@@ -726,7 +790,7 @@
         </section>
         <section>
           <h3>Agradecimento</h3>
-          <img src="img/fun/you.gif" alt="you"/>
+          <img src="img/fun/you.gif" alt="you" />
           <li style="font-size: smaller;">Vc &nbsp&nbsp<i class="em em-smile"></i></li>
           <li style="font-size: smaller;">CACCOMP - UFT</li>
           <li style="font-size: smaller;">Curso de Ciência da Computação - UFT</li>
@@ -808,7 +872,8 @@
   </script>
 
   <a href="https://www.github.com/viniciusaires7/minicurso-controle-de-versao-com-git-github" target="_blank">
-    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67"
+    alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
   </a>
 </body>
 
