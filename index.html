@@ -1,0 +1,815 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Controle de Versão com Git e Github</title>
+
+  <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+  <meta name="author" content="Hakim El Hattab">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/moon.css" id="theme">
+
+  <!-- Code syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+  <link rel="icon" href="img/logos/favicon.ico">
+
+  <style media="screen">
+    .span {
+      font-size: x-large;
+    }
+  </style>
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+
+  <!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+
+  <div class="reveal">
+
+    <!-- Slide #1: Apresentação do minicurso -->
+    <div class="slides">
+      <section>
+        <h3>Controle de Versão com</h3>
+        <h2>Git e Github</h2>
+        <img class="img_default" src="img/logos/Git-logo.png" alt="" />
+        <img src="img/logos/original.png" alt="" />
+        <p></p>
+        <div>
+          <small>Criado por <a href="https://github.com/viniciusaires7" target="_blank">@viniciusaires7</a> / <a href="https://github.com/herodrigues" target="_blank">@herodrigues</a></small>
+        </div>
+      </section>
+
+      <section>
+        <h2>Licença</h2>
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+        <img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+        <br/>
+        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">
+        Esta apresentação está licenciada com uma Licença
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons - Atribuição 4.0 Internacional</a>.
+        <br/>
+        Podem estar disponíveis autorizações adicionais às concedidas no âmbito desta licença em
+        <a xmlns:cc="http://creativecommons.org/ns#" href="https://www.github.com/viniciusaires7/minicurso-controle-de-versao-com-git-github" rel="cc:morePermissions">viniciusaires7/minicurso-controle-de-versao-com-git-github</a>.
+      </section>
+
+      <!-- Slide #2: Perfil @viniciusaires7-->
+      <section>
+        <img src="img/profile/vinicius.jpg" alt="profile-vinicius" style="border-radius: 50%;" />
+        <h4>Vinícius Aires Barros</h4>
+        <span>Idade: 21</span>
+        <br>
+        <span>7° Período de Ciência da Computação UFT</span>
+        <br>
+        <span>Desenvolvedor Web e Android</span>
+        <br>
+        <span>GitHub: <a href="https://github.com/viniciusaires7">@viniciusaires7</a></span>
+      </section>
+
+      <!-- Slide #3: - Perfil @herodrigues-->
+      <section>
+        <section>
+          <img src="img/profile/herinson.jpg" alt="profile-herinson" style="border-radius: 50%;" />
+          <h4>Herinson Rodrigues</h4>
+          <span>Idade: 24</span>
+          <br>
+          <span>6° (6!) Período de Ciência da Computação</span>
+          <br>
+          <span>Desenvolvedor Web</span>
+          <br>
+          <span>GitHub: <a href="https://github.com/herodrigues">@herodrigues</a></span>
+        </section>
+      </section>
+
+      <!-- Slide #4: Mas afinal de contas o que é o Git -->
+      <section data-transition="slide" data-background="#006064" data-background-transition="zoom">
+        <section>
+          <h3>Mas afinal de contas o que é o Git?</h3>
+          <img src="img/logos/Git-logo.png" alt="git-logo" />
+          <p>
+            Git é um sistema de controle de versão distribuído e um sistema de gerenciamento de código fonte com ênfase em velocidade,
+            integridade de dados e suporte para workflows não lineares distribuídos.
+          </p>
+        </section>
+
+        <section>
+          <h3>Mas afinal de contas o que é o Git?</h3>
+          <img src="img/slide-assets/git-server.png" alt="" />
+          <p>
+            Igualmente a vários outros sistemas de controle de versão distribuída, e diferente da maioria dos sistemas cliente-servidor, qualquer diretório Git
+            é um repositório totalmente desenvolvido com um completo histórico de controle de versão independente de acesso à internet ou de um servidor central
+          </p>
+        </section>
+
+        <section>
+          <h3>Mas afinal de contas o que é o Git?</h3>
+          <img src="img/slide-assets/git-joke.png" alt="" />
+          <p>            
+            O Git é muito utilizado em diversas empresas de desenvolvimento e funciona muito bem na maioria dos projetos, independentemente do tamanho do projeto ou do seu tipo. Ou seja praticamente todos os projetos que você irá desenvolver você poderá usar o Git como ferramenta de controle de versão.
+          </p>
+        </section>
+      </section>
+
+      <!-- Slide #5: Uma breve história sobre o GIT -->
+      <section data-background="#006064">
+        <section>
+          <h3>Uma breve história sobre o GIT</h3>
+          <img src="img/slide-assets/linus-torvalds.jpg" alt="linus-torvalds" />
+          <p>
+            Git foi inicialmente projetado e desenvolvido por Linus Torvalds para o desenvolvimento do kernel do Linux em 2005
+          </p>
+        </section>
+
+        <section>
+          <h3>Software Livre</h3>
+          <img src="img/slide-assets/tux.png" alt="tux" />
+          <img src="img/slide-assets/gnu_logo.png" alt="gnu" />
+          <p>
+            Assim como o Kernel do Linux, Git é um software livre distribuído sob a GNU GPLv2
+          </p>
+        </section>
+      </section>
+
+      <!-- Slide #9: GUIs para Git -->
+      <section data-background="#006064">
+        <section>
+          <h3>GUIs para Git</h3>
+          <span><a href="http://www.syntevo.com/smartgit/" target="_blank">SmartGIT</a> (Multiplataforma)</span>
+          <img src="img/slide-assets/smartgit_screen.png" alt="" />
+        </section>
+        <section>
+          <h3>GUIs para Git</h3>
+          <span><a href="https://desktop.github.com/" target="_blank">GitHub Desktop</a> (Windows e OSX)</span>
+          <img src="img/slide-assets/githubdesktop_screen.jpg" alt="" />
+        </section>
+        <section>
+          <h3>GUIs para Git</h3>
+          <span><a href="https://www.sourcetreeapp.com/" target="_blank">Source Tree</a> (Windows e OSX)</span>
+          <img src="img/slide-assets/sourcetree_logo.png" alt="" />
+        </section>
+      </section>
+
+      <!-- Slide #10: Serviços similares ao Git -->
+      <section data-background="#006064">
+        <h3>Serviços similares ao GIT</h3>
+        <a href="https://subversion.apache.org/" target="_blank"><img src="img/slide-assets/svn-logo.png" alt="svn-logo" /></a>
+        <a href="https://www.visualstudio.com/pt-br/products/tfs-overview-vs.aspx" target="_blank"><img src="img/slide-assets/teamfoundation_logo.png" alt="" /></a>
+        <a href="https://www.mercurial-scm.org/" target="_blank"><img src="img/slide-assets/mercurial_logo.png" alt="" /></a>
+        <br>
+        <a href="http://bazaar.canonical.com/en/" target="_blank"><img src="img/slide-assets/bazaar_logo.png" alt="" /></a>
+      </section>
+
+      <!-- Slide #6: Mas afinal de contas o que é o Github? -->
+      <section data-transition="slide" data-background="#263238" data-background-transition="zoom">
+        <section>
+          <h3>Mas afinal de contas o que é o GitHub?</h3>
+          <img src="img/logos/logo_github.png" alt="" />
+          <p>
+            GitHub é um serviço web de hospedagem compartilhada para projetos que usam o controle de versão Git. Ele oferece todos os tipos de controle distribuído de versão e funcionalidades de gereciamento de código-fonte (SCM) do Git assim como diversas outras
+            funcionalidades.
+          </p>
+        </section>
+        <section>
+          <h3>Mas afinal de contas o que é o GitHub?</h3>
+          <img src="img/fun/jedi_octocat.jpg" alt="" />
+          <p>
+            Ao contrário do Git, que é basicamente restrito à linha de comando, o Github oferece interface gráfica para web assim como para desktop e integração mobile. O Github também possui diversas funcionalidades de controle de acesso e colaboração tais como
+            bug tracking, requisição de funcionalidades, gerencimento de tarefas e wikis.
+          </p>
+        </section>
+        <section>
+          <h3>Mas afinal de contas o que é o GitHub?</h3>
+          <img src="img/fun/heisen_octocat.png" alt="" />
+          <p>
+            O Github oferece tanto planos privados como contas grátis que são geralmente utilizadas para hospedar projetos de software livre. Além disso, o Github oferece planos grátis para estudantes que possuem email institucional ativo. Em 2015, o Github informou
+            ter mais de 9 milhões de usuários e mais de 21.1 milhões de repositórios, sendo assim o maior serviço de hospedagem de código-fonte no mundo!
+          </p>
+        </section>
+
+        <section>
+          <h3>Website GitHub</h3>
+          <span style="font-size: smaller;">Acessem: <a href="https://github.com/" target="_blank">https://github.com/</a></span>
+          <br>
+          <img src="img/logos/github_web.png" alt="" />
+        </section>
+      </section>
+
+      <!-- Slide #7: Breve história do Github -->
+      <section data-background="#263238">
+        <section>
+          <h3>Uma Breve História sobre o GitHub</h3>
+          <img src="img/fun/teacher_octocat.png" alt="" />
+          <p>
+             O desenvolvimento da plataforma Github começou em 1° de outubro de 2007. O site foi lançado em abril de 2008 por Tom Preston-Werner, Chris Wanstrath, and PJ Hyett depois de ter ficado por alguns meses no ar em fase beta.
+          </p>
+        </section>
+        <section>
+          <h3>Criadores do GitHub</h3>
+          <img src="img/slide-assets/tom_preston_werner.jpg" alt="" style="border-radius: 50%;" />
+          <img src="img/slide-assets/chris_wanstrath.jpg" alt="" style="border-radius: 50%;" />
+          <br>
+          <img src="img/slide-assets/pj_hyett.jpg" alt="" style="border-radius: 50%;" />
+          <img src="img/slide-assets/scoth_chacon.png" alt="" style="border-radius: 50%;" />
+          <br>
+          <ul>
+            <li style="font-size: smaller;">Tom Preston Werner e Chris Wanstrath</li>
+            <li style="font-size: smaller;">PJ Hyett e Scoth Chacon</li>
+          </ul>
+        </section>
+      </section>
+
+      <!-- Slide #8 Serviços similares o Github -->
+      <section data-background="#263238">
+        <h3>Serviços similares ao GitHub</h3>
+        <a href="https://bitbucket.org/" target="_blank"><img src="img/slide-assets/bitbucket_logo.png" alt="" /></a>
+        <a href="https://cloud.google.com/tools/cloud-repositories/" target="_blank"><img src="img/slide-assets/google_code_logo.png" alt="" /></a>
+        <a href="https://about.gitlab.com/" target="_blank"><img src="img/slide-assets/gitlab_logo.png" alt="" /></a>
+        <br>
+        <a href="https://www.codebasehq.com/" target="_blank"><img src="img/slide-assets/codebase-logo.jpg" alt="" /></a>
+        <a href="https://www.assembla.com/home" target="_blank"><img src="img/slide-assets/assembla_logo.png" alt="" /></a>
+      </section>
+
+      <!-- Slide #11: Mas por que usar Git e Github? -->
+      <section data-transition="slide" data-background="#006064">
+        <section>
+          <h3>Mas por que usar o Git e GitHub?</h3>
+          <img src="img/fun/daftpunk_octocat.gif" alt="" style="width: 30%;"/>
+          <br>
+          <ul>
+            <li>Utilizar em projetos individuais ou em grupo</li>
+            <li>Fazer controle de versão de arquivos pessoais</li>
+            <li>Controlar arquivos de exercícios feitos em sala de aula</li>
+            <li>Empresas cada vez mais olham os perfis de seus candidatos no GitHub</li>
+          </ul>
+        </section>
+      </section>
+
+      <!-- Slide #12: Como instalar o Git -->
+      <section data-background="#006064">
+        <section>
+          <h3>Como instalar o GIT?</h3>
+          <span>GNU LINUX</span>
+          <div style="background-color: black; margin-top: 10px;">
+            <span style="color: #00FF21;">$ sudo apt-get install git -y</span>
+          </div>
+          <br>
+          <span>OSX</span>
+          <div style="background-color: black; margin-top: 10px;">
+            <span style="color: #00FF21;">$ brew install git</span>
+          </div>
+          <br>
+          <span>Windows</span>
+          <br>
+          <a href="https://git-scm.com/download/win" target="_blank">Baixar o instalador do GIT</a>
+        </section>
+
+        <!-- Slide #13: Primeiros passos -->
+        <section>
+          <h3>Primeiros Passos</h3>
+          <ol>
+            <li>Criando pasta do projeto</li>
+            <div style="background-color: black; margin-top: 10px;">
+              <span style="color: #00FF21;">$ mkdir primeiro_projeto</span>
+            </div>
+            <li>Acessando diretório da pasta do projeto</li>
+            <div style="background-color: black; margin-top: 10px;">
+              <span style="color: #00FF21;">$ cd primeiro_projeto/</span>
+            </div>
+            <li>Inicializando o GIT no diretório</li>
+            <div style="background-color: black; margin-top: 10px;">
+              <span style="color: #00FF21;">$ git init</span>
+            </div>
+          </ol>
+        </section>
+
+        <section>
+          <h3>Adcionando o primeiro arquivo</h3>
+          <ol>
+            <li>Criando arquivo index.html</li>
+            <div style="background-color: black; margin-top: 10px;">
+              <span style="color: #00FF21;">$ echo "Hello World" > index.html</span>
+            </div>
+            <li>Verificando status dos arquivos no diretório do projeto</li>
+            <div style="background-color: black; margin-top: 10px;">
+              <span style="color: #00FF21;">$ git status</span>
+            </div>
+            <li>Adcionando todos os arquivos ao index git</li>
+            <div style="background-color: black; margin-top: 10px;">
+              <span style="color: #00FF21;">$ git add * #git add .</span>
+            </div>
+            <li>Criando o primeiro commit referente ao projeto</li>
+            <div style="background-color: black;">
+              <span style="color: #00FF21;">$ git commit -m "primeiro commit hello world"</span>
+            </div>
+          </ol>
+        </section>
+      </section>
+
+      <!-- Slide #14: Criando uma conta no Github -->
+      <section data-transition="slide" data-background="#006064">
+        <section>
+          <h3>Criando uma conta no Github</h3>
+          <img src="img/fun/barack_octocat.jpg" alt="" />
+          <p style="text-align: center;">
+            Primeiramente vamos acessar o site oficial do Github em <a href="https://www.github.com" target="_blank">https://www.github.com</a>
+          </p>
+        </section>
+      </section>
+
+      <section data-background="#f14e32">
+        <h3>Documentação/Livros</h3>
+        <a href="https://git-scm.com/book/pt-br/v1" target="_blank"><img src="https://git-scm.com/images/books/pro-git@2x.jpg" alt="" style="margin-right: 25px;"/></a>
+        <a href="https://git-scm.com/documentation" target="_blank"><img src="https://github-images.s3.amazonaws.com/enterprise/2.0/assets/images/site/fork-a-repo.gif" alt="" /></a>
+      </section>
+
+      <!-- Slide #15: Comandos básicos do GIT -->
+      <section>
+        <section>
+          <h3>Comandos básicos do GIT</h3>
+          <br>
+          <table>
+            <tbody>
+              <tr>
+                <td>git init</td>
+                <td>git status</td>
+                <td>git clone</td>
+              </tr>
+              <tr>
+                <td>git add</td>
+                <td>git rm</td>
+                <td>git commit</td>
+              </tr>
+              <tr>
+                <td>git log</td>
+                <td>git push</td>
+                <td>git pull</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <h3>Comando git init</h3>
+          <li>git-init - Cria um repositório (dirtório) Git vazio ou inicializa um novo</li>
+          <br>
+          <h4>Possíveis comandos</h4>
+          <div style="border: solid 1px;background-color: white;">
+            git init [-q | --quiet] [--bare] [--template=<template_directory>]
+            	  [--separate-git-dir <git dir>]
+            	  [--shared[=<permissions>]] [directory]
+          </div>
+          <br>
+          <caption><a href="https://git-scm.com/docs/git-init" target="_blank">referência na documentação do git</a></caption>
+        </section>
+
+        <section>
+          <h3>Comando git status</h3>
+          <li>git-status - Exibe o status da árvore de trabalho</li>
+          <br>
+          <h4>Possíveis comandos</h4>
+          <div style="border: solid 1px;background-color: white;">
+            git status [<options>…​] [--] [<pathspec>…​]
+          </div>
+          <br>
+          <caption><a href="https://git-scm.com/docs/git-status" target="_blank">referência na documentação do git</a></caption>
+        </section>
+
+        <section>
+          <h3>Comando git add</h3>
+          <li>git-add - Adciona arquivo(s) ao index</li>
+          <br>
+          <h4>Possíveis comandos</h4>
+          <div style="border: solid 1px;background-color: white;">
+            git add [--verbose | -v] [--dry-run | -n] [--force | -f] [--interactive | -i] [--patch | -p]
+	                  [--edit | -e] [--[no-]all | --[no-]ignore-removal | [--update | -u]]
+	                  [--intent-to-add | -N] [--refresh] [--ignore-errors] [--ignore-missing]
+	                  [--] [<pathspec>…​]
+          </div>
+          <br>
+          <caption><a href="https://git-scm.com/docs/git-add" target="_blank">referência na documentação do git</a></caption>
+        </section>
+
+        <section>
+          <h3>Comando git rm</h3>
+          <li>git-rm - Remove arquivos da árvore de trabalho e do index</li>
+          <br>
+          <h4>Possíveis comandos</h4>
+          <div style="border: solid 1px;background-color: white;">
+            git rm [-f | --force] [-n] [-r] [--cached] [--ignore-unmatch] [--quiet] [--] <file>…​
+          </div>
+          <br>
+          <caption><a href="https://git-scm.com/docs/git-rm" target="_blank">referência na documentação do git</a></caption>
+        </section>
+
+        <section>
+          <h3>Comando git commit</h3>
+          <li>git-commit - Gravar mudanças no repositório</li>
+          <br>
+          <h4>Possíveis comandos</h4>
+          <div style="border: solid 1px;background-color: white;">
+            git commit [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]
+                  	   [--dry-run] [(-c | -C | --fixup | --squash) <commit>]
+                  	   [-F <file> | -m <msg>] [--reset-author] [--allow-empty]
+                  	   [--allow-empty-message] [--no-verify] [-e] [--author=<author>]
+                  	   [--date=<date>] [--cleanup=<mode>] [--[no-]status]
+                  	   [-i | -o] [-S[<keyid>]] [--] [<file>…​]
+          </div>
+          <br>
+          <caption><a href="https://git-scm.com/docs/git-commit" target="_blank">referência na documentação do git</a></caption>
+        </section>
+
+        <section>
+          <h3>Comando git clone</h3>
+          <li>git-clone - Clona um repositório em um novo diretório</li>
+          <br>
+          <h4>Possíveis comandos</h4>
+          <div style="border: solid 1px;background-color: white;">
+            git clone [--template=<template_directory>]
+                  	  [-l] [-s] [--no-hardlinks] [-q] [-n] [--bare] [--mirror]
+                  	  [-o <name>] [-b <name>] [-u <upload-pack>] [--reference <repository>]
+                  	  [--dissociate] [--separate-git-dir <git dir>]
+                  	  [--depth <depth>] [--[no-]single-branch]
+                  	  [--recursive | --recurse-submodules] [--] <repository>
+                  	  [<directory>]
+          </div>
+          <br>
+          <caption><a href="https://git-scm.com/docs/git-clone" target="_blank">referência na documentação do git</a></caption>
+        </section>
+
+        <section>
+          <h3>Comando git push</h3>
+          <li>git-push - Atualiza referências remotas do repositório git</li>
+          <br>
+          <h4>Possíveis comandos</h4>
+          <div style="border: solid 1px;background-color: white;">
+            git push [--all | --mirror | --tags] [--follow-tags] [--atomic] [-n | --dry-run] [--receive-pack=<git-receive-pack>]
+                	   [--repo=<repository>] [-f | --force] [--prune] [-v | --verbose]
+                	   [-u | --set-upstream]
+                	   [--[no-]signed|--sign=(true|false|if-asked)]
+                	   [--force-with-lease[=<refname>[:<expect>]]]
+                	   [--no-verify] [<repository> [<refspec>…​]]
+          </div>
+          <br>
+          <caption><a href="https://git-scm.com/docs/git-push" target="_blank">referência na documentação do git</a></caption>
+        </section>
+
+        <section>
+          <h3>Comando git pull</h3>
+          <li>git-pull - Atualiza repositório local com as atualizações do repositório remoto</li>
+          <br>
+          <h4>Possíveis comandos</h4>
+          <div style="border: solid 1px;background-color: white;">
+            git pull [options] [<repository> [<refspec>…​]]
+          </div>
+          <br>
+          <caption><a href="https://git-scm.com/docs/git-pull" target="_blank">referência na documentação do git</a></caption>
+        </section>
+
+        <section>
+          <h3>Comando git log</h3>
+          <li>git-log - Mostra logs commit</li>
+          <br>
+          <h4>Possíveis comandos</h4>
+          <div style="border: solid 1px;background-color: white;">
+            git log [<options>] [<revision range>] [[\--] <path>…​]
+          </div>
+          <br>
+          <caption><a href="https://git-scm.com/docs/git-log" target="_blank">referência na documentação do git</a></caption>
+        </section>
+      </section>
+
+      <!-- Slide #16: Comandos avançados do Git -->
+      <section>
+        <section>
+          <h3>Comandos Avançados do GIT</h3>
+          <table>
+            <tbody>
+              <tr>
+                <td>git branch</td>
+                <td>git checkout</td>
+                <td>git merge</td>
+              </tr>
+              <tr>
+                <td>git diff</td>
+                <td>git remote</td>
+                <td>git tag</td>
+              </tr>
+              <tr>
+                <td>git rebase</td>
+                <td>git reset</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <h3>Comando git branch</h3>
+          <li>git-branch - Lista, cria, ou deleta branches</li>
+          <br>
+          <h4>Possíveis comandos</h4>
+          <div style="border: solid 1px;background-color: white;">
+            git branch  [--color[=<'when'>] | --no-color] [-r | -a]
+                        [--list] [-v [--abbrev=<'length'> | --no-abbrev]]
+                        [--column[=<'options'>] | --no-column]
+                        [(--merged | --no-merged | --contains) [<'commit'>]] [<'pattern'>…​]
+
+            git branch [--set-upstream | --track | --no-track] [-l] [-f] <'branchname'> [<'start-point'>]
+            git branch (--set-upstream-to=<'upstream'> | -u <'upstream'>) [<'branchname'>]
+            git branch --unset-upstream [<'branchname'>]
+            git branch (-m | -M) [<'oldbranch'>] <'newbranch'>
+            git branch (-d | -D) [-r] <'branchname'>…​
+            git branch --edit-description [<'branchname'>]
+          </div>
+          <br>
+          <caption><a href="https://git-scm.com/docs/git-branch" target="_blank">referência na documentação do git</a></caption>
+        </section>
+
+        <section>
+          <h3>Comando git checkout</h3>
+          <li>git-checkout - Alternar entre branch ou restaura arquivos da árvore de trabalho</li>
+          <br>
+          <h4>Possíveis comandos</h4>
+          <div style="border: solid 1px;background-color: white;">
+            git checkout [-q] [-f] [-m] [<'branch'>]
+            git checkout [-q] [-f] [-m] --detach [<'branch'>]
+            git checkout [-q] [-f] [-m] [--detach] <'commit'>
+            git checkout [-q] [-f] [-m] [[-b|-B|--orphan] <'new_branch'>] [<'start_point'>]
+            git checkout [-f|--ours|--theirs|-m|--conflict=<'style'>] [<'tree-ish'>] [--] <'paths'>…​
+            git checkout [-p|--patch] [<'tree-ish'>] [--] [<'paths'>…​]
+          </div>
+          <br>
+          <caption><a href="https://git-scm.com/docs/git-checkout" target="_blank">referência na documentação do git</a></caption>
+        </section>
+
+        <section>
+          <h3>Comando git merge</h3>
+          <li>git-merge - Junta dois ou mais branch de desenvolvimento em conjunto</li>
+          <br>
+          <h4>Possíveis comandos</h4>
+          <div style="border: solid 1px;background-color: white;">
+            git merge [-n] [--stat] [--no-commit] [--squash] [--[no-]edit]
+                      [-s <'strategy'>] [-X <'strategy-option'>] [-S[<'keyid'>]]
+                      [--[no-]rerere-autoupdate] [-m <'msg'>] [<'commit'>…​]
+            git merge <'msg'> HEAD <'commit'>…​
+            git merge --abort
+          </div>
+          <br>
+          <caption><a href="https://git-scm.com/docs/git-merge" target="_blank">referência na documentação do git</a></caption>
+        </section>
+
+        <section>
+          <h3>Comando git diff</h3>
+          <li>git-diff - Mostrar modificações entre arquivos, commit e árvore de trabalho etc.</li>
+          <br>
+          <h4>Possíveis comandos</h4>
+          <div style="border: solid 1px;background-color: white;">
+            git diff [options] [<'commit'>] [--] [<'path'>…​]
+            git diff [options] --cached [<'commit'>] [--] [<'path'>…​]
+            git diff [options] <'commit'> <'commit'> [--] [<'path'>…​]
+            git diff [options] <'blob'> <'blob'>
+            git diff [options] [--no-index] [--] <'path'> <'path'>
+          </div>
+          <br>
+          <caption><a href="https://git-scm.com/docs/git-diff" target="_blank">referência na documentação do git</a></caption>
+        </section>
+
+        <section>
+          <h3>Comando git remote</h3>
+          <li>git-remote - Gerencia um conjunto de repositórios rastreados</li>
+          <br>
+          <h4>Possíveis comandos</h4>
+          <div style="border: solid 1px;background-color: white;">
+            git remote [-v | --verbose]
+            git remote add [-t <'branch'>] [-m <'master'>] [-f] [--[no-]tags] [--mirror=<'fetch'|'push'>] <'name'> <'url'>
+            git remote rename <'old'> <'new'>
+            git remote remove <'name'>
+          </div>
+          <br>
+          <caption><a href="https://git-scm.com/docs/git-remote" target="_blank">referência na documentação do git</a></caption>
+        </section>
+
+        <section>
+          <h3>Comando git rebase</h3>
+          <li>git-rebase - Integra mudanças de um branch em outro: o merge e o rebase</li>
+          <br>
+          <h4>Possíveis comandos</h4>
+          <div style="border: solid 1px;background-color: white;">
+            git rebase [-i | --interactive] [options] [--exec <'cmd'>] [--onto <'newbase'>] [<'upstream'> [<'branch'>]]
+            git rebase [-i | --interactive] [options] [--exec <'cmd'>] [--onto <'newbase'>] --root [<'branch'>]
+            git rebase --continue | --skip | --abort | --edit-todo
+          </div>
+          <br>
+          <caption><a href="https://git-scm.com/docs/git-rebase" target="_blank">referência na documentação do git</a></caption>
+        </section>
+
+        <section>
+          <h3>Comando git reset</h3>
+          <li>git-reset - Desfaz mudanças em um branch</li>
+          <br>
+          <h4>Possíveis comandos</h4>
+          <div style="border: solid 1px;background-color: white;">
+            git reset [-q] [<'tree-ish'>] [--] <'paths'>...
+            git reset (--patch | -p) [<'tree-ish'>] [--] [<'paths'>...]
+            git reset [--soft | --mixed [-N] | --hard | --merge | --keep] [-q] [<'commit'>]
+          </div>
+          <br>
+          <caption><a href="https://git-scm.com/docs/git-reset" target="_blank">referência na documentação do git</a></caption>
+        </section>
+
+        <section>
+          <h3>Comando git tag</h3>
+          <li>git-tag - Cria, lista, exclui ou verifica um objeto tag assinado com GPG</li>
+          <br>
+          <h4>Possíveis comandos</h4>
+          <div style="border: solid 1px;background-color: white;">
+            git tag [-a | -s | -u <'keyid'>] [-f] [-m <'msg'> | -F <'file'>]
+                    <'tagname'> [<'commit'> | <'object'>]
+            git tag -d <'tagname'>…​
+            git tag [-n[<'num'>]] -l [--contains <'commit'>] [--points-at <'object'>]
+                    [--column[=<'options'>] | --no-column] [--create-reflog] [<'pattern'>…​]
+            git tag -v <'tagname'>…​
+          </div>
+          <br>
+          <caption><a href="https://git-scm.com/docs/git-tag" target="_blank">referência na documentação do git</a></caption>
+        </section>
+      </section>
+
+      <!-- Slide #17: Introdução a Branching -->
+      <section>
+        <section>
+          <h3>Introdução a Branching</h3>
+          <img src="img/slide-assets/branching-workflow.png" alt="branching-workflow" />
+          <p>
+            Branch (Ramificação) é mais um dos recursos do git para um melhor controle sobre os commits feito no projeto.
+          </p>
+        </section>
+        <section>
+          <h3>Criando o primeiro Branch</h3>
+          <ol>
+            <li>Verificando status do projeto</li>
+            <div style="background-color: black; margin-top: 10px;">
+              <span style="color: #00FF21;">$ git status</span>
+            </div>
+            <li>Listando todos os branch do projeto</li>
+            <div style="background-color: black; margin-top: 10px;">
+              <span style="color: #00FF21;">$ git branch</span>
+            </div>
+            <li>Criando um novo branch</li>
+            <div style="background-color: black; margin-top: 10px;">
+              <span style="color: #00FF21;">$ git checkout -b "novo_branch"</span>
+            </div>
+          </ol>
+        </section>
+        <section>
+          <h3>Outras operações com branch</h3>
+          <ol>
+            <li>Mudando de um branch para outro (checkout)</li>
+            <div style="background-color: black; margin-top: 10px;">
+              <span style="color: #00FF21;">$ git checkout "branch"</span>
+            </div>
+            <li>Deletando um branch</li>
+            <div style="background-color: black; margin-top: 10px;">
+              <span style="color: #00FF21;">$ git branch -d "branch"</span>
+            </div>
+          </ol>
+        </section>
+
+        <section>
+          <h3>Merge de um branch</h3>
+          <ol>
+            <li>Merge de um branch com outro</li>
+            <div style="background-color: black; margin-top: 10px;">
+              <span style="color: #00FF21;">$ git checkout "branch_destino"</span>
+            </div>
+            <li>Deletando um branch</li>
+            <div style="background-color: black; margin-top: 10px;">
+              <span style="color: #00FF21;">$ git merge "branch_origem"</span>
+            </div>
+          </ol>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h3>Extra</h3>
+          <img src="https://hackhands.com/data/blogs/ClosedSource/hackhands-github-student-developer-pack/assets/github.png" alt="" />
+          <a href="https://education.github.com/pack" target="_blank">Saiba mais</a>
+        </section>
+        <section>
+          <h3>Referências</h3>
+          <div style="background-color: #fff">
+            <ol>
+              <li style="font-size: smaller;">Git Documentation. Disponível em: <a href="https://git-scm.com/documentation">https://git-scm.com/documentation</a>. Acesso em 19 de outubro de 2015. Fonte: GIT DOCUMENTATION: https://git-scm.com/documentation</li>
+              <li style="font-size: smaller;">Git Book. Disponível em: <a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a>. Acesso em 19 de outubro de 2015. Fonte: GIT BOOK: https://git-scm.com/book/en/v2</li>
+            </ol>
+          </div>
+        </section>
+        <section>
+          <h3>Agradecimento</h3>
+          <img src="img/fun/you.gif" alt="you"/>
+          <li style="font-size: smaller;">Vc &nbsp&nbsp<i class="em em-smile"></i></li>
+          <li style="font-size: smaller;">CACCOMP - UFT</li>
+          <li style="font-size: smaller;">Curso de Ciência da Computação - UFT</li>
+        </section>
+        <section>
+          <h3>Realização</h3>
+          <div style="background-color: #F9FBE7;">
+            <a href="http://uft.edu.br/secomp2015/" target="_blank">
+              <img src="img/logos/secomp_logo_decription.png" alt="" />
+            </a>
+            <br>
+            <a href="http://ww1.uft.edu.br/" target="_blank">
+              <img src="img/logos/uft.png" alt="" />
+            </a>
+            <a href="http://uft.edu.br/comp/" target="_blank">
+              <img src="img/logos/ccomp.png" alt="" />
+            </a>
+            <a href="https://www.facebook.com/caccompuft" target="_blank">
+              <img src="img/logos/caccomp.png" alt="" />
+            </a>
+          </div>
+        </section>
+      </section>
+
+      <section>
+        <h3>Fim</h3>
+        <img src="img/fun/gangnam_octocat.png" alt="gangnam_octocat" />
+      </section>
+    </div>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+      // Optional reveal.js plugins
+      dependencies: [{
+        src: 'lib/js/classList.js',
+        condition: function() {
+          return !document.body.classList;
+        }
+      }, {
+        src: 'plugin/markdown/marked.js',
+        condition: function() {
+          return !!document.querySelector('[data-markdown]');
+        }
+      }, {
+        src: 'plugin/markdown/markdown.js',
+        condition: function() {
+          return !!document.querySelector('[data-markdown]');
+        }
+      }, {
+        src: 'plugin/highlight/highlight.js',
+        async: true,
+        condition: function() {
+          return !!document.querySelector('pre code');
+        },
+        callback: function() {
+          hljs.initHighlightingOnLoad();
+        }
+      }, {
+        src: 'plugin/zoom-js/zoom.js',
+        async: true
+      }, {
+        src: 'plugin/notes/notes.js',
+        async: true
+      }]
+    });
+  </script>
+
+  <a href="https://www.github.com/viniciusaires7/minicurso-controle-de-versao-com-git-github" target="_blank">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+  </a>
+</body>
+
+</html\00\00>
